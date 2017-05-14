@@ -3,7 +3,9 @@ package in.gillli.wiki.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import in.gillli.wiki.entity.Menu;
 import in.gillli.wiki.entity.Page;
+import in.gillli.wiki.repository.MenuRepository;
 import in.gillli.wiki.repository.PageRepository;
 
 @Service
@@ -12,7 +14,19 @@ public class PageService {
 	@Autowired
 	private PageRepository pageRepository;
 	
+	@Autowired
+	private MenuRepository menuRepository;
+	
+	
 	public void addPage(Page page){
+		pageRepository.save(page); 
+	}
+	
+	public void addPageAndMenu(Page page,String parentMenu){
+		Menu menu = new Menu();
+		menu.menu =page.title;
+		menu.link=page.urlFrendlyTitle;
+		menu.parentMenu=parentMenu;
 		pageRepository.save(page); 
 	}
 	
