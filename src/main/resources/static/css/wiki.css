@@ -1,0 +1,27 @@
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+.navbar-blue-shadow{
+  background:#0275d8;
+box-shadow: 5px 5px 10px grey;
+color:white:
+}
+
+.navbar-blue-shadow a { 
+  color:white;
+  font-weight:700;	
+}
+
+.navbar-blue-shadow .navbar-nav > li > a:focus,
+.navbar-blue-shadow .navbar-nav > li > a:hover {
+  	background-color:white;
+	color:blue;
+}
+
+.searchbox input{
+    width: 70% !important;
+}
+
+
