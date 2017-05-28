@@ -1,26 +1,34 @@
 package in.gillli.wiki.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import in.gillli.wiki.entity.Book;
-import in.gillli.wiki.entity.Page;
 import in.gillli.wiki.repository.BookRepository;
-import in.gillli.wiki.repository.PageRepository;
 
 @Service
-public class PageService {
+public class BookService {
 
 	@Autowired
-	private PageRepository pageRepository;
+	private BookRepository bookRepository;
 	
-		
-	public void addPage(Page page){
-		pageRepository.save(page); 
+	public void saveBook(Book book){
+		book.createdDate=new Date();
+		bookRepository.save(book);
 	}
 	
-	public Page getPage(String pageTitle){
-		return pageRepository.findByUrlFrendlyTitle(toCamelUnderscore(pageTitle));
+	public Book getBookByName(String bookName){
+		return bookRepository.findByUrlFriendlyName(toCamelUnderscore(bookName));
+	}
+	
+	public Book getBookByUrlFriendlyName(String bookName){
+		return bookRepository.findByUrlFriendlyName(bookName);
+	}
+	
+	public Book getBook(String bookId){
+		return bookRepository.findOne(bookId);
 	}
 	
 	public String toCamelUnderscore(String input){
