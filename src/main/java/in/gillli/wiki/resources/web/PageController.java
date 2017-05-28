@@ -15,7 +15,7 @@ import in.gillli.wiki.service.PageService;
 
 @RestController
 @RequestMapping("/resource/page")
-public class WikiPageController {
+public class PageController {
 
 	@Autowired
 	private PageService pageService;
