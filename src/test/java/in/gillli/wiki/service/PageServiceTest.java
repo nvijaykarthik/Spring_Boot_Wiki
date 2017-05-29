@@ -25,13 +25,8 @@ public class PageServiceTest {
 		 page.urlFrendlyTitle=pageService.toCamelUnderscore(page.title);
 		 page.createdBy="vijaykarthik";
 		 page.createdDate = new Date();
-		 
 		 pageService.addPage(page);
 	}
 
-	@Test
-	public void testGetPage() {
-		System.out.println(pageService.getPage("My First title"));
-	}
 
 }
