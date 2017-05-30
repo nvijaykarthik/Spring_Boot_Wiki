@@ -1,6 +1,7 @@
 package in.gillli.wiki.resources.web;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -24,10 +25,15 @@ public class BookController {
 	public void addBook(@RequestBody Book book){
 		book.createdDate=new Date();
 		bookService.saveBook(book);
-		}
+	}
 	
 	@RequestMapping(method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	public Book getBook(@RequestParam String bookName){
 		return	bookService.getBookByName(bookName);
+	}
+	
+	@RequestMapping(path="/search",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Book> getBookLike(@RequestParam String bookName){
+		return	bookService.getBookLikeName(bookName);
 	}
 }

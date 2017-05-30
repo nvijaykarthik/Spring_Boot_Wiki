@@ -1,6 +1,7 @@
 package in.gillli.wiki.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,5 +48,9 @@ public class BookService {
             }
         }
         return result.replaceAll(" ", "_");
+	}
+
+	public List<Book> getBookLikeName(String bookName) {
+		return bookRepository.findByNameContainingIgnoreCase(bookName);
 	}
 }

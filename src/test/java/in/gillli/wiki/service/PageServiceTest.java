@@ -20,7 +20,7 @@ public class PageServiceTest {
 	@Test
 	public void testAddPage() {
 		 Page page = new Page();
-		 page.title="My First title";
+		 page.title="home";
 		 page.content="# My First Page";
 		 page.urlFrendlyTitle=pageService.toCamelUnderscore(page.title);
 		 page.createdBy="vijaykarthik";

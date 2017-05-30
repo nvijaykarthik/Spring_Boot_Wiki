@@ -24,4 +24,48 @@ color:white:
     width: 70% !important;
 }
 
+.viewPane{
+	padding:15px;
+}
+.sidebarPanel{
+	border-right:solid 1px #e6e6e6;
+}
 
+.sidebar-view ul{
+	margin:0;
+	padding-left:15px;
+}
+
+.sidebar-view li{
+	list-style-type: none;
+	margin-bottom: 3px;
+}
+
+.searchResult{
+	position: absolute;
+	z-index:1500;
+	padding:10px;
+	background:#fff;
+	border:#e6e6e6 1px solid;
+	width:100%;
+    display: list-item;
+}
+.search-a{
+	color:#000 !important;
+	font-weight:400;
+}
+
+.search-ul{
+	padding: 0 5px 0;
+    list-style-type: none;
+    -webkit-column-count: 4;
+    column-count: 4;
+    -webkit-column-gap: 1em;
+    -ms-column-gap: 1em;
+    column-gap: 1em;
+}
+.search-li {
+    width: auto;
+    display: list-item;
+    height: 22px;
+}

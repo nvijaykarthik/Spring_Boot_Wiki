@@ -20,16 +20,16 @@ public class BookServiceTest {
 	@Test
 	public void testAddBook() {
 		Book book = new Book();
-		book.name="My First book";
+		book.name="My second book";
 		book.createdBy="vijaykarthik n";
 		book.urlFriendlyName=bookservice.toCamelUnderscore(book.name);
 		bookservice.saveBook(book);
-		book=bookservice.getBookByName("My First book");
+		book=bookservice.getBookByName("My second book");
 		System.out.println(book);
-		book.sidebarContent ="* Homepage";
+		book.sidebarContent ="* [Homepage](/resource/page/home)";
 		book.bookCover="# cover page";
 		bookservice.saveBook(book);
-		book=bookservice.getBookByName("My First book");
+		book=bookservice.getBookByName("My second book");
 		System.out.println(book);
 	}		
 
